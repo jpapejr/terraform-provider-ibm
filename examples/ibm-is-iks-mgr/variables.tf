@@ -11,12 +11,12 @@ variable "profile" {
 }
 
 variable "vpc" {
-  default = "jtp1"
+  default = "jtp-1"
 }
 
 variable "name" {
 }
 
 variable "subnet" {
-  
+
 }
