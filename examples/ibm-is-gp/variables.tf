@@ -20,3 +20,7 @@ variable "name" {
 variable "subnet" {
 
 }
+
+variable "sg" {
+  
+}
