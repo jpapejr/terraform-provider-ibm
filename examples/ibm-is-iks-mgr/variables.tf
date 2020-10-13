@@ -16,3 +16,7 @@ variable "vpc" {
 
 variable "name" {
 }
+
+variable "subnet" {
+  
+}
