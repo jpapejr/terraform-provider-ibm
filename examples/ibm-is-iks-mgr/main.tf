@@ -4,7 +4,6 @@ data "ibm_is_vpc" "vpc" {
 
 data "ibm_is_subnet" "subnet" {
   name            = var.subnet
-  vpc             = data.ibm_is_vpc.vpc.id
 }
 
 data "ibm_is_ssh_key" "sshkey" {
