@@ -4,7 +4,7 @@ data "ibm_is_vpc" "vpc" {
 
 data "ibm_is_subnet" "subnet" {
   name            = var.subnet
-  vpc             = ibm_is_vpc.vpc.id
+  vpc             = data.ibm_is_vpc.vpc.id
 }
 
 data "ibm_is_ssh_key" "sshkey" {
@@ -17,10 +17,10 @@ resource "ibm_is_instance" "instance1" {
   profile = var.profile
 
   primary_network_interface {
-    subnet = ibm_is_subnet.subnet.id
+    subnet = data.ibm_is_subnet.subnet.id
   }
 
-  vpc       = ibm_is_vpc.vpc.id
+  vpc       = data.ibm_is_vpc.vpc.id
   zone      = var.zone
-  keys      = [ibm_is_ssh_key.sshkey.id]
+  keys      = [data.ibm_is_ssh_key.sshkey.id]
 }
