@@ -23,3 +23,8 @@ resource "ibm_is_instance" "instance1" {
   zone      = var.zone
   keys      = [data.ibm_is_ssh_key.sshkey.id]
 }
+
+resource "ibm_is_floating_ip" "floatingip1" {
+  name   = "${var.name}-ip"
+  target = ibm_is_instance.instance1.primary_network_interface[0].id
+}
