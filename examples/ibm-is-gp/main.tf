@@ -2,9 +2,10 @@ data "ibm_is_vpc" "vpc" {
   name = var.vpc
 }
 
-data "ibm_is_subnet" "subnet" {
-  name            = var.subnet
-}
+# removed because of a bug in the TF provider in ibm/ibm.subnetGetByNameOrID
+# data "ibm_is_subnet" "subnet" {
+#   name            = var.subnet
+# }
 
 data "ibm_is_ssh_key" "sshkey" {
   name       = "jtpape"
@@ -20,7 +21,7 @@ resource "ibm_is_instance" "instance1" {
   profile = var.profile
 
   primary_network_interface {
-    subnet = data.ibm_is_subnet.subnet.id
+    subnet = var.subnetid
   }
 
   vpc       = data.ibm_is_vpc.vpc.id

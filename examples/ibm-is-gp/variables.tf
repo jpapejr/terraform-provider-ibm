@@ -22,8 +22,8 @@ variable "name" {
   description = "Name of the instance"
 }
 
-variable "subnet" {
-  description = "Name of the VPC subnet to create the instance."
+variable "subnetid" {
+  description = "ID of the VPC subnet to create the instance."
 }
 
 variable "sg" {
