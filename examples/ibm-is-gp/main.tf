@@ -22,7 +22,7 @@ resource "ibm_is_instance" "instance1" {
 
   primary_network_interface {
     subnet = var.subnetid
-    security_groups = var.sg
+    security_groups = [ var.sg ]
   }
 
   vpc       = data.ibm_is_vpc.vpc.id
