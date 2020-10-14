@@ -36,8 +36,8 @@ resource "ibm_is_instance" "instance1" {
 #   network_interface = ibm_is_instance.instance1.primary_network_interface[0].id
 # }
 
-# resource "ibm_is_floating_ip" "floatingip1" {
-#   name   = "${var.name}-ip"
-#   target = ibm_is_instance.instance1.primary_network_interface[0].id
-# }
+resource "ibm_is_floating_ip" "floatingip1" {
+  name   = "${var.name}-ip"
+  target = ibm_is_instance.instance1.primary_network_interface[0].id
+}
 
