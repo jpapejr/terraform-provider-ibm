@@ -27,5 +27,5 @@ variable "subnetid" {
 }
 
 variable "sg" {
-  description = "Name of the security group to attach the instance to"  
+  description = "ID of the security group to attach the instance to"  
 }
